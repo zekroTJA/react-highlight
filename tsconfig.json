@@ -19,8 +19,7 @@
       {
         "name": "typescript-styled-plugin"
       }
-    ],
-    "baseUrl": "src"
+    ]
   },
   "include": ["src"]
 }
