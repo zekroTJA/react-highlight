@@ -1,6 +1,12 @@
 {
-  "name": "react-highlight",
-  "version": "0.1.0",
+  "name": "@zekro/react-highlight",
+  "description": "React component to highlight keyword occurences in text.",
+  "author": {
+    "name": "zekro",
+    "email": "contact@zekro.de",
+    "url": "https://www.zekro.de"
+  },
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
