@@ -1,3 +1,4 @@
+import React from 'react';
 import { HighlightContext } from '../Provider';
 import { GlobalProps } from '../../models/props';
 import { memo, useContext } from 'react';

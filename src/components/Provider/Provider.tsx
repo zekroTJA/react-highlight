@@ -1,3 +1,4 @@
+import React from 'react';
 import { GlobalProps } from '../../models/props';
 import { createContext } from 'react';
 
