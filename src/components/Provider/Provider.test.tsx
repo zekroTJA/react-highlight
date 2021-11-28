@@ -3,9 +3,9 @@ import { render } from '@testing-library/react';
 import { Provider } from '.';
 
 describe('Test Highlight inside Provider', () => {
-  it('renders Highlight with occurences inside Provider', () => {
+  it('renders Highlight with occurrences inside Provider', () => {
     const content =
-      'This is the inner content of this Highlight with keyword occurences.';
+      'This is the inner content of this Highlight with keyword occurrences.';
     const keywords = ['keyword occur', 'inner content', 'highlight'];
     const res = render(
       <Provider keywords={keywords}>

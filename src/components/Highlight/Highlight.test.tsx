@@ -2,15 +2,15 @@ import { Highlight } from '../..';
 import { render } from '@testing-library/react';
 
 describe('Test Highlight', () => {
-  it('renders Highlight without occurences', () => {
+  it('renders Highlight without occurrences', () => {
     const content = 'inner content';
     const res = render(<Highlight content={content} />);
     expect(res.container.innerHTML).toBe(`<span>${content}</span>`);
   });
 
-  it('renders Highlight with occurences', () => {
+  it('renders Highlight with occurrences', () => {
     const content =
-      'This is the inner content of this Highlight with keyword occurences.';
+      'This is the inner content of this Highlight with keyword occurrences.';
     const keywords = ['keyword occur', 'inner content', 'highlight'];
     const res = render(<Highlight content={content} keywords={keywords} />);
 

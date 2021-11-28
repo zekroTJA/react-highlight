@@ -14,7 +14,7 @@ interface Occurence {
   raw: string;
 }
 
-function findOccurences(
+function findOccurrences(
   content: string,
   contentLower: string,
   keyword: string
@@ -38,7 +38,7 @@ function findOccurences(
   return occ;
 }
 
-function replaceOccurences(
+function replaceOccurrences(
   content: string,
   keywords: string[],
   wrapHighlight: (content: string, id: number) => JSX.Element
@@ -47,16 +47,16 @@ function replaceOccurences(
 
   const contentLower = content.toLocaleLowerCase();
 
-  const occurences = keywords
+  const occurrences = keywords
     .map((keyword) =>
-      findOccurences(content, contentLower, keyword.toLocaleLowerCase())
+      findOccurrences(content, contentLower, keyword.toLocaleLowerCase())
     )
     .flat()
     .sort((a, b) => a.start - b.start);
 
   let i = 0;
   let id = 0;
-  for (const occ of occurences) {
+  for (const occ of occurrences) {
     if (occ.start !== 0)
       res.push(<span key={id++}>{content.substring(i, occ.start)}</span>);
     res.push(wrapHighlight(occ.raw, id++));
@@ -80,7 +80,7 @@ const _Highlight: React.FC<Props> = ({
 
   return (
     <>
-      {replaceOccurences(content, keywords ?? [], (c, id) => (
+      {replaceOccurrences(content, keywords ?? [], (c, id) => (
         <span
           key={id}
           className={highlightClassName ?? 'highlight-highlighted'}

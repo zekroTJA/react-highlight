@@ -1,6 +1,6 @@
 {
   "name": "@zekro/react-highlight",
-  "description": "React component to highlight keyword occurences in text.",
+  "description": "React component to highlight keyword occurrences in text.",
   "author": {
     "name": "zekro",
     "email": "contact@zekro.de",
