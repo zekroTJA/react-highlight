@@ -1,6 +1,7 @@
 import typescript from 'rollup-plugin-typescript2';
 import url from '@rollup/plugin-url';
 import pkg from './package.json';
+import css from 'rollup-plugin-import-css';
 
 export default {
   input: './src/index.ts',
@@ -29,5 +30,6 @@ export default {
       tsconfig: 'tsconfig-rollup.json',
       typescript: require('typescript'),
     }),
+    css(),
   ],
 };
