@@ -1,4 +1,4 @@
-# react-highlight  [![Tests CI](https://github.com/zekroTJA/react-highlight/actions/workflows/tests.yml/badge.svg)](https://github.com/zekroTJA/react-highlight/actions/workflows/tests.yml)
+# react-highlight  [![Tests CI](https://github.com/zekroTJA/react-highlight/actions/workflows/tests.yml/badge.svg)](https://github.com/zekroTJA/react-highlight/actions/workflows/tests.yml) [![](https://img.shields.io/npm/v/@zekro/react-highlight.svg)](https://www.npmjs.com/package/@zekro/react-highlight)
 
 This library adds a component to highlight keyword occurences in text.
 
