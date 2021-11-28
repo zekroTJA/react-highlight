@@ -6,6 +6,11 @@
     "email": "contact@zekro.de",
     "url": "https://www.zekro.de"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zekroTJA/react-highlight.git"
+  },
+  "license": "MIT",
   "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
