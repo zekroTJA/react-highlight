@@ -1,6 +1,6 @@
 import { HighlightContext } from '../Provider';
 import { GlobalProps } from '../../models/props';
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import './Highlight.css';
 
 interface Props extends GlobalProps {
@@ -66,7 +66,7 @@ function replaceOccurences(
   return res;
 }
 
-export const Highlight: React.FC<Props> = ({
+const _Highlight: React.FC<Props> = ({
   content,
   keywords,
   highlightClassName,
@@ -89,3 +89,5 @@ export const Highlight: React.FC<Props> = ({
     </>
   );
 };
+
+export const Highlight = memo(_Highlight);
