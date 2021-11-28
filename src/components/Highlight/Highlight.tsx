@@ -58,7 +58,7 @@ function replaceOccurences(
   for (const occ of occurences) {
     res.push(<span key={id++}>{content.substring(i, occ.start)}</span>);
     res.push(wrapHighlight(occ.raw, id++));
-    i = occ.end + 1;
+    i = occ.end;
   }
   if (i != content.length)
     res.push(<span key={id++}>{content.substr(i)}</span>);
