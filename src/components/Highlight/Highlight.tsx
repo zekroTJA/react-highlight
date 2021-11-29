@@ -68,28 +68,24 @@ function replaceOccurrences(
   return res;
 }
 
-const _Highlight: React.FC<Props> = ({
-  content,
-  keywords,
-  highlightClassName,
-}) => {
-  const ctx = useContext(HighlightContext);
+export const Highlight: React.FC<Props> = memo(
+  ({ content, keywords, highlightClassName }) => {
+    const ctx = useContext(HighlightContext);
 
-  keywords = (keywords ?? []).concat(ctx?.keywords ?? []);
-  highlightClassName = ctx?.highlightClassName ?? highlightClassName;
+    keywords = (keywords ?? []).concat(ctx?.keywords ?? []);
+    highlightClassName = ctx?.highlightClassName ?? highlightClassName;
 
-  return (
-    <>
-      {replaceOccurrences(content, keywords ?? [], (c, id) => (
-        <span
-          key={id}
-          className={highlightClassName ?? 'highlight-highlighted'}
-        >
-          {c}
-        </span>
-      ))}
-    </>
-  );
-};
-
-export const Highlight = memo(_Highlight);
+    return (
+      <>
+        {replaceOccurrences(content, keywords ?? [], (c, id) => (
+          <span
+            key={id}
+            className={highlightClassName ?? 'highlight-highlighted'}
+          >
+            {c}
+          </span>
+        ))}
+      </>
+    );
+  }
+);
