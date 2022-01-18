@@ -72,7 +72,7 @@ export const Highlight: React.FC<Props> = memo(
   ({ content, keywords, highlightClassName }) => {
     const ctx = useContext(HighlightContext);
 
-    keywords = (keywords ?? []).concat(ctx?.keywords ?? []);
+    keywords = (keywords ?? []).concat(ctx?.keywords ?? []).filter((k) => !!k);
     highlightClassName = ctx?.highlightClassName ?? highlightClassName;
 
     return (

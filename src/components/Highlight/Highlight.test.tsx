@@ -1,6 +1,8 @@
 import { Highlight } from '../..';
 import { render } from '@testing-library/react';
 
+const HIGHLIGHT_CLASSNAME = 'highlight-highlighted';
+
 describe('Test Highlight', () => {
   it('renders Highlight without occurrences', () => {
     const content = 'inner content';
@@ -22,7 +24,7 @@ describe('Test Highlight', () => {
     expect(joinedContent).toEqual(content);
 
     [children[1], children[3], children[5]].forEach((child) =>
-      expect((child as HTMLElement).className).toEqual('highlight-highlighted')
+      expect((child as HTMLElement).className).toEqual(HIGHLIGHT_CLASSNAME)
     );
     [children[0], children[2], children[4], children[6]].forEach((child) =>
       expect((child as HTMLElement).className).toEqual('')
@@ -43,6 +45,21 @@ describe('Test Highlight', () => {
     expect(
       (Array.from(res.container.childNodes)[0] as HTMLElement).className
     ).toEqual(className);
+  });
+});
+
+describe('Negative tests', () => {
+  it('should be able to handle empty keyword strings [#1]', () => {
+    const res = render(
+      <Highlight
+        content="this is a test"
+        keywords={['test', '', null as any as string]}
+      />
+    );
+    const children = Array.from(res.container.childNodes);
+    expect(children.length).toEqual(2);
+    expect((children[0] as HTMLElement).className).toEqual('');
+    expect((children[1] as HTMLElement).className).toEqual(HIGHLIGHT_CLASSNAME);
   });
 });
 
